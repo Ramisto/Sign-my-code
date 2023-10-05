@@ -1,3 +1,5 @@
+![banner](./img/banner.png)
+
 # Introduction
 
 This bash script lets you create your GPG key, and configure your git client to sign all your commits.
