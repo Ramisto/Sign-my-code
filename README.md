@@ -19,6 +19,8 @@ This script also makes it easier to validate the chapter the "Signing of code" s
 
 # Requirements
 
+- gpg
+- git
 
 # Usage
 
