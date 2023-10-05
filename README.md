@@ -1,6 +1,6 @@
 # Introduction
 
-This python script lets you create your GPG key, and configure your git client to sign all your commits.
+This bash script lets you create your GPG key, and configure your git client to sign all your commits.
 
 Signing your commits allows your organization to clearly identify you, and thus mitigates the risk of manipulating unauthorized source code.
 
