@@ -1,5 +1,5 @@
 <p align="center" width="100%"><img width="50%" src="./img/banner.png"></p>
-<p align="center">A python3 script to change your crawling logs to a mindmap</p>
+<p align="center">A bash script for sign your commits</p>
 
 
 # Introduction
