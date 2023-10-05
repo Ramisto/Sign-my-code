@@ -1,6 +1,12 @@
 <p align="center" width="100%"><img width="50%" src="./img/banner.png"></p>
 <p align="center">A bash script for sign your commits</p>
 
+<p align="center">
+  <a href="#introduction">Introduction</a>
+ • <a href="#requirements">Requirements</a>
+ • <a href="#usage">Usage</a>
+ • <a href="#examples">Examples</a>
+</p>
 
 # Introduction
 
@@ -15,4 +21,6 @@ This script also makes it easier to validate the chapter the "Signing of code" s
 
 
 # Usage
+
+# Examples
 
