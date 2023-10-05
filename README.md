@@ -8,8 +8,8 @@ It has also been created to facilitate the implementation of the "Signing of cod
 
 [Build: Signing of code](https://dsomm.owasp.org/activity-description?dimension=Build%20and%20Deployment&subDimension=Build&level=3&activityName=Signing%20of%20code )
 
-
 # Requirements
+
 
 # Usage
 
