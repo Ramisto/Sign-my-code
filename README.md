@@ -1,4 +1,6 @@
-![banner](./img/banner.png)
+<p align="center" width="100%">
+    <img width="33%" src="./img/banner.png">
+</p>
 
 # Introduction
 
