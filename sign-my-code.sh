@@ -27,8 +27,18 @@ gpg-git-install () {
     echo -e '\033[0;35m-----------------------\033[0m';
 }
 
+gh-install () {
+    # Function for install github cli package
+    type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+    && sudo apt update \
+    && sudo apt install gh -y
+}
+
 check-GPG-key () {
-    # Check for existing GPG keys
+    # Function for check for existing GPG keys
     # This command to list the long form of the GPG keys
     echo -e '\033[0;35m--- Check for existing GPG keys ---\033[0m';
     gpg --list-secret-keys --keyid-format=long
@@ -36,7 +46,18 @@ check-GPG-key () {
 }
 
 generate-new-GPG-key () {
-    echo 'hello';
+    # Function for generate a new GPG key
+    echo -e '\033[0;35m--- Check for existing GPG keys ---\033[0m';
+    echo -e '\033[0;35m1) for specify the kind of key you want, press Enter to accept the default.\033[0m';
+    echo -e '\033[0;35m2) for specify the key size you want, press Enter to accept the default.\033[0m';
+    echo -e '\033[0;35m3) for specify the length of time the key should be valid, indicate '90' and press Enter to accept (90 days).\033[0m';
+    echo -e '\033[0;35m4) enter your realname (John Doe)\033[0m';
+    echo -e '\033[0;35m5) enter your professional e-mail address (john.doe@business.com)\033[0m';
+    echo -e '\033[0;35m5) enter your passphrase (ideally with dashlane, 1password, etc...)\033[0m';
+    gpg --full-generate-key
+    
+    check-GPG-key
+    echo -e '\033[0;35m-----------------------\033[0m';
 }
 
 add-gpg-key-github () {
