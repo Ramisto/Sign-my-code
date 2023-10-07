@@ -24,6 +24,18 @@ WHITE='\033[1;37m'
 # ----------------------------------
 # Functions
 # ----------------------------------
+
+banner () {
+echo "     _______. __    _______ .__   __.    .___  ___. ____    ____      ______   ______    _______   _______ ";
+echo "    /       ||  |  /  _____||  \ |  |    |   \/   | \   \  /   /     /      | /  __  \  |       \ |   ____|";
+echo "   |   (----\|  | |  |  __ |\|   |  |    \  /  |  \  \/   /   |    ,----'|  | | |  |  .--.  ||   ||__   ";
+echo "    \   \    |  | |  | |_ | |  .\`  |    |  |\/|  |   \_    _/      |  |    | | |  |  | |  |  |  ||   __|  ";
+echo ".----)   |   |  | |  |__| | |  |\   |    |  |  |  |     |  |        |  \`----.|  \`--'| |  '--'  ||____ ";
+echo "|_______/    |__|  \______| |__| \__|    |__|  |__|     |__|         \______| \______/  |_______/ |_______|";
+echo "                                                                                                           ";
+}
+
+
 gpg-install () {
     # Verify if gpg is already installed, if not, install the package
     pkg=gpg
@@ -48,7 +60,7 @@ git-install () {
     fi
 }
 
-check-keys () {
+check-GPG-key () {
     # Checking for existing GPG keys
     # This command to list the long form of the GPG keys
     echo -e '\033[0;31m### Checking for existing GPG keys... ###\033[0m'
@@ -56,27 +68,12 @@ check-keys () {
     echo -e '\033[0;31m########\033[0m'
 }
 
-new-key-and-configure-git () {
-    echo -e '\033[0;31m### Generate a new GPG keys... ###\033[0m'
-    read -r -p 'Would you like to generate a new GPG key to sign your commits? [y/N]' response
-    if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
-    then
-        gpg --full-generate-key
-        echo -e '\033[0;31m########\033[0m'
-
-        echo -e '\033[0;31m### Configuring your Git CLI in progress... ###\033[0m'
-        git config --global --unset gpg.format
-        gpg --list-secret-keys --keyid-format=long
-
-    else
-        echo -e '\033[0;34m Okay, if you already have a key, then go next step (declare your key in your Github account <3)\033[0m'
-        echo -e 'click here : https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account'
-    fi
+generate-new-GPG-key () {
 }
 
 
 # ----------------------------------
-# Main
+# Select menu
 # ----------------------------------
 
 PS3='Please enter your choice: '
