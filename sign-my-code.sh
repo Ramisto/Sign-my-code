@@ -79,12 +79,25 @@ new-key-and-configure-git () {
 # Main
 # ----------------------------------
 
-# Install pre-requisites packages
-gpg-install
-git-install
+PS3='Please enter your choice: '
 
-# Checking for existing GPG keys
-check-keys
+options=("Option 1" "Option 2" "Option 3" "Quit")
 
-# Generate a new GPG key
-generate-new-key
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Option 1")
+            echo "you chose choice 1"
+            ;;
+        "Option 2")
+            echo "you chose choice 2"
+            ;;
+        "Option 3")
+            echo "you chose choice $REPLY which is $opt"
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
