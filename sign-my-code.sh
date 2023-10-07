@@ -19,22 +19,24 @@ echo "";
 gpg-git-install () {
     # Function for install gpg and git packages 
     echo -e '\033[0;35m--- Installing GPG ---\033[0m';
-    apt -y install gpg
-    echo -e '\033[0;35m-----------------------\033[0m';
+    sudo apt -y install gpg
+    echo -e '\033[0;35m----------done-------------\033[0m';
 
     echo -e '\033[0;35m--- Installing Git ---\033[0m';
-    apt -y install git
-    echo -e '\033[0;35m-----------------------\033[0m';
+    sudo apt -y install git
+    echo -e '\033[0;35m----------done-------------\033[0m';
 }
 
 gh-install () {
     # Function for install github cli package
+    echo -e '\033[0;35m--- Installing Github CLI ---\033[0m';
     type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
     && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
     && sudo apt update \
     && sudo apt install gh -y
+    echo -e '\033[0;35m----------done-------------\033[0m';
 }
 
 check-GPG-key () {
@@ -42,7 +44,7 @@ check-GPG-key () {
     # This command to list the long form of the GPG keys
     echo -e '\033[0;35m--- Check for existing GPG keys ---\033[0m';
     gpg --list-secret-keys --keyid-format=long
-    echo -e '\033[0;35m-----------------------\033[0m';
+    echo -e '\033[0;35m----------done-------------\033[0m';
 }
 
 generate-new-GPG-key () {
@@ -55,13 +57,19 @@ generate-new-GPG-key () {
     echo -e '\033[0;35m5) enter your professional e-mail address (john.doe@business.com)\033[0m';
     echo -e '\033[0;35m5) enter your passphrase (ideally with dashlane, 1password, etc...)\033[0m';
     gpg --full-generate-key
+    echo -e '\033[0;35m----------done-------------\033[0m';
     
     check-GPG-key
-    echo -e '\033[0;35m-----------------------\033[0m';
 }
 
 add-gpg-key-github () {
-    echo 'hello';
+    echo -e '\033[0;35m--- Add a GPG key to your GitHub account ---\033[0m';
+    gpg --list-secret-keys --keyid-format LONG
+    ID='Please enter your ID of GPG key: '
+    echo -e '\033[0;35mExport ...\033[0m'; 
+    gpg --armor --export $ID
+    echo -e '\033[0;35mCopy/Paste this export to your github account https://github.com/settings/keys ("New GPG key") \033[0m';
+    echo -e '\033[0;35m----------done-------------\033[0m';
 }
 
 configure-git-cli () {
@@ -80,13 +88,14 @@ sign-commit-examples () {
 banner
 
 PS3='Please enter your choice: '
-options=("Install gpg and git packages" "Check for existing GPG keys" "Generate a new GPG key" "Add a GPG key to your GitHub account" "Tell Git about your signing key" "Sign commits examples" "Quit")
+options=("Install gpg, git and github cli packages" "Check for existing GPG keys" "Generate a new GPG key" "Add a GPG key to your GitHub account" "Tell Git about your signing key" "Sign commits examples" "Quit")
 
 select opt in "${options[@]}";
 do
     case $opt in
-        "Install gpg and git packages")
+        "Install gpg, git and github cli packages")
             gpg-git-install
+            gh-install
             ;;
         "Check for existing GPG keys")
             check-GPG-key
