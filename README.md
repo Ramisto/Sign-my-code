@@ -20,7 +20,7 @@ This script also makes it easier to validate the chapter the "Signing of code" s
 
 Official documentation : 
 
-- [Git Tools Signing Your Work](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work)
+- [Telling Git about your signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
 
 # Requirements
 
