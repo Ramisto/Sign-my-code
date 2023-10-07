@@ -26,7 +26,6 @@ Official documentation :
 
 - gpg
 - git
-- gh (github CLI)
 - Ubuntu or Debian OS
 
 # Usage
