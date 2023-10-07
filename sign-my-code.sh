@@ -27,17 +27,17 @@ gpg-git-install () {
     echo -e '\033[0;35m----------done-------------\033[0m';
 }
 
-gh-install () {
+#gh-install () {
     # Function for install github cli package
-    echo -e '\033[0;35m--- Installing Github CLI ---\033[0m';
-    type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
-    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-    && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-    && sudo apt update \
-    && sudo apt install gh -y
-    echo -e '\033[0;35m----------done-------------\033[0m';
-}
+#    echo -e '\033[0;35m--- Installing Github CLI ---\033[0m';
+#    type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+#    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+#    && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+#    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+#    && sudo apt update \
+#    && sudo apt install gh -y
+#    echo -e '\033[0;35m----------done-------------\033[0m';
+#}
 
 check-GPG-key () {
     # Function for check for existing GPG keys
