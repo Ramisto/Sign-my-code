@@ -11,9 +11,7 @@ echo -e "\033[0;35m   |   (----\|  | |  |  __|\|  |    |    \  /  |  \  \/   /  
 echo -e "\033[0;35m    \   \    |  | |  | |_ | | .\`   |     |  |\/|  |   \_    _/      |    |    | |  |  | | |  |  |||   __|  \033[0m";
 echo -e "\033[0;35m.----)   |   |  | |  |__| | |  |\   |    |  |  |  |     |  |        |    \`--. |  \`--' | |  '--'  ||____ \033[0m";
 echo -e "\033[0;35m|_______/    |__|  \______| |__| \__|    |__|  |__|     |__|         \______| \______/  |_______/ |_______|\033[0m";
-echo -e "";
-echo "";
-echo "";    
+echo -e "";  
 }
 
 gpg-git-install () {
@@ -25,6 +23,7 @@ gpg-git-install () {
     echo -e '\033[0;35m--- Installing Git ---\033[0m';
     sudo apt -y install git
     echo -e '\033[0;35m----------done-------------\033[0m';
+    echo -e '';
 }
 
 #gh-install () {
@@ -45,6 +44,7 @@ check-GPG-key () {
     echo -e '\033[0;35m--- Check for existing GPG keys ---\033[0m';
     gpg --list-secret-keys --keyid-format=long
     echo -e '\033[0;35m----------done-------------\033[0m';
+    echo -e '';
 }
 
 generate-new-GPG-key () {
@@ -58,26 +58,54 @@ generate-new-GPG-key () {
     echo -e '\033[0;35m5) enter your passphrase (ideally with dashlane, 1password, etc...)\033[0m';
     gpg --full-generate-key
     echo -e '\033[0;35m----------done-------------\033[0m';
+    echo -e '';
     
     check-GPG-key
 }
 
 add-gpg-key-github () {
-    echo -e '\033[0;35m--- Add a GPG key to your GitHub account ---\033[0m';
-    gpg --list-secret-keys --keyid-format LONG
-    ID='Please enter your ID of GPG key: '
-    echo -e '\033[0;35mExport ...\033[0m'; 
-    gpg --armor --export $ID
-    echo -e '\033[0;35mCopy/Paste this export to your github account https://github.com/settings/keys ("New GPG key") \033[0m';
+    check-GPG-key
+
+    echo -e '\033[0;35m--- Export GPG key ---\033[0m';
+    read -p 'Enter your GPG key id above (examples : 3AA5C34371567BD2): ' idKey
+    gpg --armor --export $idKey
+    echo -e ''
+
+    echo -e '\033[0;35mCopy this export to your github account (beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----)\033[0m';
+    echo -e '\033[0;35mAnd paste to your gitub account here : https://github.com/settings/keys (click to "New GPG key")\033[0m';
     echo -e '\033[0;35m----------done-------------\033[0m';
+    echo -e '';
 }
 
 configure-git-cli () {
-    echo 'hello';
+    echo -e '\033[0;35m--- Telling Git about your signing key ---\033[0m';
+    echo -e '';
+    git config --global --unset gpg.format
+
+    check-GPG-key
+
+    read -p 'Enter your GPG key id above (examples 3AA5C34371567BD2): ' idKey
+    echo -e '';
+
+    echo -e '\Primary key definition and configure Git to sign all commits by default...';
+    git config --global user.signingkey $idKey
+    git config --global commit.gpgsign true
+    echo -e '';
+
+    echo -e 'Add your GPG key to your .bashrc startup file...';
+    [ -f ~/.bashrc ] && echo -e '\nexport GPG_TTY=$(tty)' >> ~/.bashrc
+    echo -e '\033[0;35m----------done-------------\033[0m';
+    echo -e '';
 }
 
 sign-commit-examples () {
-    echo 'hello';
+    echo -e '\033[0;35m--- Sign commits examples ---\033[0m';
+    echo -e '';
+    echo -e '$ git commit -S -m "YOUR_COMMIT_MESSAGE"';
+    echo -e '';
+    echo -e 'And enter your passphrase';
+    echo -e '';
+    echo -e '\033[0;35m----------done-------------\033[0m';
 }
 
 
