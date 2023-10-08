@@ -4,7 +4,7 @@
 <p align="center">
   <a href="#introduction">Introduction</a>
  • <a href="#requirements">Requirements</a>
- • <a href="#usage">Usages</a>
+ • <a href="#usage">Usage</a>
  • <a href="#examples">Examples</a>
   • <a href="#todo">TODO</a>
 </p>
@@ -29,7 +29,7 @@ Official documentation :
 - git
 - Ubuntu or Debian OS
 
-# Usages
+# Usage
 
 ### Scenario 1 : You want to sign your commits from scratch
 
