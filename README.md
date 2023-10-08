@@ -56,5 +56,7 @@ Other scenarios are possible, just select the script function that will help you
 
 Test performed in an Ubuntu 22.04.3 LTS virtual machine with no special configurations (starting from scratch).
 
+# TODO
 
+- Use github cli in the "Add a GPG key to your GitHub account" function to make the process even easier.
 
