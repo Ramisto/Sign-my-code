@@ -59,4 +59,3 @@ Test performed in an Ubuntu 22.04.3 LTS virtual machine with no special configur
 # TODO
 
 - Use github cli in the "Add a GPG key to your GitHub account" function to make the process even easier.
-
