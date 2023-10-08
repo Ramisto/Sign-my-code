@@ -54,5 +54,7 @@ Other scenarios are possible, just select the script function that will help you
 
 # Examples
 
-Tested with Ubuntu OS (from scratch)
+Test performed in an Ubuntu 22.04.3 LTS virtual machine with no special configurations (starting from scratch).
+
+
 
