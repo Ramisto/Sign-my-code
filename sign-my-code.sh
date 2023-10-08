@@ -116,14 +116,13 @@ sign-commit-examples () {
 banner
 
 PS3='Please enter your choice: '
-options=("Install gpg, git and github cli packages" "Check for existing GPG keys" "Generate a new GPG key" "Add a GPG key to your GitHub account" "Tell Git about your signing key" "Sign commits examples" "Quit")
+options=("Install gpg & git packages" "Check for existing GPG keys" "Generate a new GPG key" "Add a GPG key to your GitHub account" "Tell Git about your signing key" "Sign commits examples" "Quit")
 
 select opt in "${options[@]}";
 do
     case $opt in
-        "Install gpg, git and github cli packages")
+        "Install gpg & git packages")
             gpg-git-install
-            gh-install
             ;;
         "Check for existing GPG keys")
             check-GPG-key
