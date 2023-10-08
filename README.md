@@ -4,8 +4,9 @@
 <p align="center">
   <a href="#introduction">Introduction</a>
  • <a href="#requirements">Requirements</a>
- • <a href="#usage">Usage</a>
+ • <a href="#usage">Usages</a>
  • <a href="#examples">Examples</a>
+  • <a href="#todo">TODO</a>
 </p>
 
 # Introduction
