@@ -17,11 +17,11 @@ echo -e "";
 gpg-git-install () {
     # Function for install gpg and git packages 
     echo -e '\033[0;35m--- Installing GPG ---\033[0m';
-    sudo apt -y install gpg
+    apt -y install gpg
     echo -e '\033[0;35m----------done-------------\033[0m';
 
     echo -e '\033[0;35m--- Installing Git ---\033[0m';
-    sudo apt -y install git
+    apt -y install git
     echo -e '\033[0;35m----------done-------------\033[0m';
     echo -e '';
 }
@@ -59,8 +59,6 @@ generate-new-GPG-key () {
     gpg --full-generate-key
     echo -e '\033[0;35m----------done-------------\033[0m';
     echo -e '';
-    
-    check-GPG-key
 }
 
 add-gpg-key-github () {
