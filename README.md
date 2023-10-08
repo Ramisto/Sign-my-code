@@ -28,7 +28,31 @@ Official documentation :
 - git
 - Ubuntu or Debian OS
 
-# Usage
+# Usages
+
+### Scenario 1 : You want to sign your commits from scratch
+
+Follow these steps in order :
+
+1) Install gpg, git and github cli packages
+2) Generate a new GPG key
+3) Add a GPG key to your GitHub account
+4) Tell Git about your signing key
+5) Sign commits examples
+6) Quit
+
+### Scenario 2 : You want to sign your commits with an existing GPG key, and GPG/Git packages is already installed
+
+Follow these steps in order :
+
+1) Add a GPG key to your GitHub account
+2) Tell Git about your signing key
+3) Sign commits examples
+4) Quit
+
+Other scenarios are possible, just select the script function that will help you ;-)
 
 # Examples
+
+Tested with Ubuntu OS (from scratch)
 
