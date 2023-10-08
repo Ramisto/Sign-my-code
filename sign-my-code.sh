@@ -49,7 +49,7 @@ check-GPG-key () {
 
 generate-new-GPG-key () {
     # Function for generate a new GPG key
-    echo -e '\033[0;35m--- Check for existing GPG keys ---\033[0m';
+    echo -e '\033[0;35m--- Generate a new GPG key ---\033[0m';
     echo -e '\033[0;35m1) for specify the kind of key you want, press Enter to accept the default.\033[0m';
     echo -e '\033[0;35m2) for specify the key size you want, press Enter to accept the default.\033[0m';
     echo -e '\033[0;35m3) for specify the length of time the key should be valid, indicate '90' and press Enter to accept (90 days).\033[0m';
