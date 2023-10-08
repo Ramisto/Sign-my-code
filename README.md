@@ -31,11 +31,17 @@ Official documentation :
 
 # Usage
 
+```
+$ sudo chmod +x sign-my-code.sh
+$ bash sign-my-code.sh
+
+```
+
 ### Scenario 1 : You want to sign your commits from scratch
 
 Follow these steps in order :
 
-1) Install gpg, git and github cli packages
+1) Install gpg & git packages
 2) Generate a new GPG key
 3) Add a GPG key to your GitHub account
 4) Tell Git about your signing key
@@ -56,6 +62,10 @@ Other scenarios are possible, just select the script function that will help you
 # Examples
 
 Test performed in an Ubuntu 22.04.3 LTS virtual machine with no special configurations (starting from scratch).
+
+Install gpg & git packages : 
+
+...
 
 # TODO
 
