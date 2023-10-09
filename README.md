@@ -32,7 +32,8 @@ Official documentation :
 # Usage
 
 ```
-$ sudo chmod +x sign-my-code.sh
+$ su -
+$ chmod +x sign-my-code.sh
 $ bash sign-my-code.sh
 
 ```
@@ -61,7 +62,7 @@ Other scenarios are possible, just select the script function that will help you
 
 # Examples
 
-Test performed in an Ubuntu 22.04.3 LTS virtual machine with no special configurations (starting from scratch).
+Test performed in an Xubuntu 22.04.3 LTS virtualbox machine with root account (starting from scratch).
 
 Install gpg & git packages : 
 
