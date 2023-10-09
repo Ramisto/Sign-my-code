@@ -62,6 +62,7 @@ generate-new-GPG-key () {
 }
 
 add-gpg-key-github () {
+    # Function for add a GPG key to your GitHub account
     check-GPG-key
 
     echo -e '\033[0;35m--- Export GPG key ---\033[0m';
@@ -76,6 +77,7 @@ add-gpg-key-github () {
 }
 
 configure-git-cli () {
+    # Function for tell Git about your signing key
     echo -e '\033[0;35m--- Telling Git about your signing key ---\033[0m';
     echo -e '';
     git config --global --unset gpg.format
@@ -97,6 +99,7 @@ configure-git-cli () {
 }
 
 sign-commit-examples () {
+    # Function for sign commits examples
     echo -e '\033[0;35m--- Sign commits examples ---\033[0m';
     echo -e '';
     echo -e '$ git commit -S -m "YOUR_COMMIT_MESSAGE"';
