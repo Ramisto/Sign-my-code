@@ -11,7 +11,7 @@
 
 # Introduction
 
-This bash script lets you create your GPG key, and configure your git client to sign all your commits.
+This bash script lets you create your GPG key, and configure your git CLI to sign all your commits.
 
 Signing your commits allows your organization to clearly identify you, and thus mitigates the risk of manipulating unauthorized source code.
 
@@ -25,16 +25,23 @@ Official documentation :
 
 # Requirements
 
+- Ubuntu or Debian OS
 - gpg
 - git
-- Ubuntu or Debian OS
+- root privilege
+
 
 # Usage
 
 ```
-$ su -
+$ su
 $ chmod +x sign-my-code.sh
-$ bash sign-my-code.sh
+$ ./sign-my-code.sh
+
+or
+
+$ sudo chmod +x sign-my-code.sh
+$ sudo ./sign-my-code.sh
 
 ```
 
@@ -42,29 +49,42 @@ $ bash sign-my-code.sh
 
 Follow these steps in order :
 
-1) Install gpg & git packages
-2) Generate a new GPG key
-3) Add a GPG key to your GitHub account
-4) Tell Git about your signing key
-5) Sign commits examples
-6) Quit
+- Execute this script with root privilege
+- Install gpg & git packages
+- Generate a new GPG key
+- Add a GPG key to your GitHub account
+- Tell Git about your signing key
+- Sign commits examples
+- Quit
 
 ### Scenario 2 : You want to sign your commits with an existing GPG key, and GPG/Git packages is already installed
 
 Follow these steps in order :
 
-1) Add a GPG key to your GitHub account
-2) Tell Git about your signing key
-3) Sign commits examples
-4) Quit
+- Add a GPG key to your GitHub account
+- Tell Git about your signing key
+- Sign commits examples
+- Quit
 
-Other scenarios are possible, just select the script function that will help you ;-)
+Other scenarios are possible, just select the option that will help you ;-)
 
 # Examples
 
-Test performed in an Xubuntu 22.04.3 LTS virtualbox machine with root account (starting from scratch).
+Test performed in an Xubuntu 22.04.3 LTS virtualbox machine with root privilege (scenario 1, to sign your commits from scratch).
 
-Install gpg & git packages : 
+![ubuntu-lab](img/ubuntu-lab.png)
+
+1) Execute this script : 
+
+![chmod](img/chmod.png)
+
+2) Install gpg & git packages : 
+
+![chmod](img/chmod.png)
+
+3) Generate a new GPG key : 
+
+![install-git-gpg](img/install-git-gpg.png)
 
 ...
 
