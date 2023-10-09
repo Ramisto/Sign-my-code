@@ -80,11 +80,11 @@ Test performed in an Xubuntu 22.04.3 LTS virtualbox machine with root privilege 
 
 2) Install gpg & git packages : 
 
-![chmod](img/chmod.png)
+![install-git-gpg](img/install-git-gpg.png)
 
 3) Generate a new GPG key : 
 
-![install-git-gpg](img/install-git-gpg.png)
+
 
 ...
 
