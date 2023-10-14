@@ -13,12 +13,6 @@
 
 This bash script lets you create your GPG key, and configure your git CLI to sign all your commits.
 
-Signing your commits allows your organization to clearly identify you, and thus mitigates the risk of manipulating unauthorized source code.
-
-This script also makes it easier to validate the chapter the "Signing of code" security measure of the OWASP DSOMM model here : 
-
-- [OWASP DSOMM Signing of Code](https://dsomm.owasp.org/activity-description?dimension=Build%20and%20Deployment&subDimension=Build&level=3&activityName=Signing%20of%20code )
-
 Official documentation : 
 
 - [About commit signature verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)
