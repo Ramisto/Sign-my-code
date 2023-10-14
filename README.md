@@ -70,7 +70,7 @@ Other scenarios are possible, just select the option that will help you ;-)
 
 # Examples
 
-Test performed in an Xubuntu 22.04.3 LTS virtualbox machine with root privilege (scenario 1, to sign your commits from scratch).
+Test performed in an Xubuntu 22.04.3 LTS virtualbox machine with root privilege.
 
 ![ubuntu-lab](img/ubuntu-lab.png)
 
