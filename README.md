@@ -11,7 +11,7 @@
 
 # Introduction
 
-This bash script lets you create your GPG key, and configure your git CLI to sign all your commits.
+This simple bash script has been designed to help you configure your environment to sign your commits with a GPG key.
 
 Official documentation : 
 
@@ -68,20 +68,11 @@ Test performed in an Xubuntu 22.04.3 LTS virtualbox machine with root privilege.
 
 ![ubuntu-lab](img/ubuntu-lab.png)
 
-1) Execute this script : 
+Execute this script : 
 
 ![chmod](img/chmod.png)
 
-2) Install gpg & git packages : 
+Install gpg & git packages : 
 
 ![install-git-gpg](img/install-git-gpg.png)
 
-3) Generate a new GPG key : 
-
-
-
-...
-
-# TODO
-
-- Use github cli in the "Add a GPG key to your GitHub account" function to make the process even easier.
