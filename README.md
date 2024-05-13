@@ -6,7 +6,6 @@
  • <a href="#requirements">Requirements</a>
  • <a href="#usage">Usage</a>
  • <a href="#examples">Examples</a>
-  • <a href="#todo">TODO</a>
 </p>
 
 # Introduction
