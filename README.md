@@ -10,7 +10,7 @@
 
 # Introduction
 
-This simple bash script has been designed to help you configure your environment to sign your commits with a GPG key.
+This bash script has been designed to help you configure your environment to sign your commits with a GPG key.
 
 Official documentation : 
 
